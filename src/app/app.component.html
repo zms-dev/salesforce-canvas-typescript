@@ -1,0 +1,24 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div class="title">Salesforce Canvas Javascript SDK Demo</div>
+  <div class="spacer"></div>
+</div>
+
+<div class="content" role="main">
+  <ng-container *ngIf="client$ | async as client; else noClient">
+    <div>
+      <label>Instance ID: </label>
+      <span>{{ client.instanceId }}</span>
+    </div>
+    <div>
+      <label>Target Origin: </label>
+      <span>{{ client.targetOrigin }}</span>
+    </div>
+    <div>
+      <label>OAuth Token: </label>
+      <span>{{ client.oauthToken }}</span>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #noClient> Waiting on Salesforce Canvas Client... </ng-template>
